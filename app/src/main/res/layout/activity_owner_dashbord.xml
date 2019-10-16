@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color6"
+    tools:context=".OwnerDashbordAct">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_dashbord" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="18dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/logout_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/edit_owner"
+        android:layout_width="60dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/icon_owner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/mmedium"
+        android:text="Steve Jobs"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edit_owner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="92dp"
+        android:fontFamily="@font/mregular"
+        android:text="Owner"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/edit_owner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_info"
+        android:paddingLeft="30dp"
+        android:paddingTop="15dp"
+        android:paddingRight="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mregular"
+            android:text="All Information"
+            android:textColor="@color/color4"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="9dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/icon_ostrips" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="30dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+<!--Cabang 1-->
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="260dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/card_top">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Toko Cabang 1"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginLeft="30dp"
+                                android:fontFamily="@font/mregular"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mlight"
+                                android:textColor="#fff"
+                                android:text="7 Karyawan"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"/>
+
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="260dp"
+                            android:layout_height="350dp"
+                            android:layout_marginBottom="30dp"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/card_bottom">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jumat 11 Oktober 2019"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/color5"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/color4"
+                                android:text="Rp. 2.000.000"/>
+
+                            <LinearLayout
+                                android:id="@+id/datak1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_employer"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Data \nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/laporank1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_keuangan2"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Laporan\nKeuangan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/gajik1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_gaji"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gaji\nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/edit_toko"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/icon_pensil"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+<!--Cabang 2-->
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="260dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/card_top">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Toko Cabang 2"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginLeft="30dp"
+                                android:fontFamily="@font/mregular"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mlight"
+                                android:textColor="#fff"
+                                android:text="3 Karyawan"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"/>
+
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="260dp"
+                            android:layout_height="350dp"
+                            android:layout_marginBottom="30dp"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/card_bottom">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jumat 11 Oktober 2019"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/color5"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/color4"
+                                android:text="Rp. 2.000.000"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_employer"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Data \nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_keuangan2"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Laporan\nKeuangan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_gaji"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gaji\nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/icon_pensil"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+<!--Cabang 3-->
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:layout_width="260dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/card_top">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Toko Cabang 3"
+                                android:textColor="#fff"
+                                android:textSize="16sp"
+                                android:layout_marginTop="18dp"
+                                android:layout_marginLeft="30dp"
+                                android:fontFamily="@font/mregular"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mlight"
+                                android:textColor="#fff"
+                                android:text="5 Karyawan"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"/>
+
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="260dp"
+                            android:layout_height="350dp"
+                            android:layout_marginBottom="30dp"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/card_bottom">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jumat 11 Oktober 2019"
+                                android:layout_marginTop="20dp"
+                                android:textColor="@color/color5"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/mregular"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                android:textColor="@color/color4"
+                                android:text="Rp. 2.000.000"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="20dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_employer"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Data \nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_keuangan2"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Laporan\nKeuangan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="10dp"
+                                android:padding="10dp"
+                                android:background="@drawable/bg_card">
+
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/icon_gaji"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Gaji\nKaryawan"
+                                    android:fontFamily="@font/mregular"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/color5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginLeft="10dp"/>
+
+                            </LinearLayout>
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/icon_pensil"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+
+
+
+
+
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

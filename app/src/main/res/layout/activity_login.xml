@@ -45,7 +45,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/swipekiri"
+        android:background="@drawable/swipekirix"
         app:layout_constraintEnd_toStartOf="@+id/btn_owner"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

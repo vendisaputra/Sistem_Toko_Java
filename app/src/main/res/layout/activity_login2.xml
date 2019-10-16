@@ -56,7 +56,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/swipekanan"
+        android:background="@drawable/swipekananx"
         app:layout_constraintEnd_toStartOf="@+id/txt_owner"
         app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"

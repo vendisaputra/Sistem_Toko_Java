@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 public class DashbordAct extends AppCompatActivity {
 
     TextView keuangan, absensi;
+    Button logout;
     LinearLayout linearlayout, linearlayout2;
     ImageView absen_belum,absen_sudah,laporan_belum,laporan_sudah;
 
@@ -28,6 +30,7 @@ public class DashbordAct extends AppCompatActivity {
         absen_sudah = findViewById(R.id.absen_sudah);
         laporan_belum = findViewById(R.id.laporan_belum);
         laporan_sudah = findViewById(R.id.laporan_sudah);
+        logout = findViewById(R.id.logout);
 
         absen_sudah.animate().alpha(0).setDuration(300).start();
         laporan_sudah.animate().alpha(0).setDuration(300).start();
@@ -65,6 +68,14 @@ public class DashbordAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent go = new Intent(DashbordAct.this,LaporanUangAct.class);
+                startActivity(go);
+
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go = new Intent(DashbordAct.this,LoginAct.class);
                 startActivity(go);
 
             }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color6"
-    tools:context=".LaporanUangAct">
+    tools:context=".DataKaryawanAct">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -21,12 +21,14 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/mlight"
-        android:text="Laporan Keuangan"
+        android:text="Data Karyawan"
         android:textColor="#fff"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <Button
         android:id="@+id/back"
@@ -49,8 +51,8 @@
         android:fontFamily="@font/mlight"
         android:hint="Search"
         android:paddingLeft="50dp"
-        android:textSize="16sp"
         android:textColor="@color/color5"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,234 +85,242 @@
             android:paddingBottom="100dp">
 
             <!--<android.support.v7.widget.RecyclerView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:id="@+id/laporan_uang_place">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/absensi_place">-->
 
 
             <!--</android.support.v7.widget.RecyclerView>-->
-            <RelativeLayout
+
+            <LinearLayout
+                android:id="@+id/profilk"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
-            <RelativeLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
-            <RelativeLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
-            <RelativeLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
-            <RelativeLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
-            <RelativeLayout
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
+                android:paddingLeft="30dp"
+                android:orientation="horizontal"
                 android:background="@drawable/bg_list">
+
+                <ImageView
+                    android:layout_marginTop="16dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/icon_absenuser"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="30dp"
+                    android:paddingLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mlight"
-                        android:text="9 Oktober 2019"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/mregular"
+                        android:text="Sapa Nama"
+                        android:textSize="18sp"
                         android:textColor="@color/color5"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mregular"
-                        android:text="Rp. 2000.000"
-                        android:textSize="18sp"
+                        android:text="Sukoharjo"
+                        android:textSize="16sp"
                         android:layout_marginTop="6dp"
                         android:textColor="@color/color4"/>
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/icon_x"/>
-
-            </RelativeLayout>
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -321,7 +331,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnplus"
+        android:id="@+id/btnplus2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="28dp"
@@ -329,7 +339,5 @@
         android:background="@drawable/icon_plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 
 </android.support.constraint.ConstraintLayout>

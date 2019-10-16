@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingBottom="20dp"
     android:background="#fff">
@@ -33,44 +33,140 @@
             android:textColor="@color/color5"/>
 
     </LinearLayout>
-    <TableLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
-        <TableRow
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@color/color1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nama"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/mlight"
-                android:textSize="14sp"
-                android:layout_weight="3"
-                android:textColor="#fff"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hadir"
-                android:layout_marginLeft="15dp"
-                android:fontFamily="@font/mlight"
-                android:textSize="14sp"
-                android:layout_weight="1"
-                android:textColor="#fff"/>
-        </TableRow>
-
-        <android.support.v7.widget.RecyclerView
+        android:layout_height="300dp">
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/absensi_popup_place">
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+            <TableRow
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/color1">
 
-        </android.support.v7.widget.RecyclerView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:textSize="14sp"
+                    android:layout_weight="3"
+                    android:textColor="#fff"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hadir"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:textColor="#fff"/>
+            </TableRow>
+            <TableRow android:layout_marginTop="4dp"
+                android:background="@drawable/bg_square"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sapa Nama"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:layout_weight="3"
+                    android:textColor="@color/color5"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow android:layout_marginTop="4dp"
+                android:background="@drawable/bg_square"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sapa Nama"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:layout_weight="3"
+                    android:textColor="@color/color5"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow android:layout_marginTop="4dp"
+                android:background="@drawable/bg_square"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sapa Nama"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:layout_weight="3"
+                    android:textColor="@color/color5"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_weight="1" />
+            </TableRow>
+            <TableRow android:layout_marginTop="4dp"
+                android:background="@drawable/bg_square"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sapa Nama"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp"
+                    android:layout_weight="3"
+                    android:textColor="@color/color5"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/mlight"
+                    android:layout_weight="1" />
+            </TableRow>
 
 
-    </TableLayout>
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/absensi_popup_place">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+
+        </TableLayout>
+
+    </ScrollView>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
