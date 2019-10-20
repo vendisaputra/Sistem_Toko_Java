@@ -42,7 +42,7 @@ public class ListAbsensiAct extends AppCompatActivity {
 
 //mengambil data dari intent
         Bundle bundle = getIntent().getExtras();
-        final String nama_karyawan= bundle.getString("nama");
+        final String nama_karyawan= bundle.getString("key");
 
 
 //database
