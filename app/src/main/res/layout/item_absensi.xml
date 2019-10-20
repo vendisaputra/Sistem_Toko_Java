@@ -21,17 +21,19 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/xnama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mregular"
-            android:text="Sapa Nama"
+            android:text=""
             android:textSize="18sp"
             android:textColor="@color/color5"/>
         <TextView
+            android:id="@+id/xposisi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mregular"
-            android:text="Hadir"
+            android:text=""
             android:textSize="16sp"
             android:layout_marginTop="6dp"
             android:textColor="@color/color4"/>

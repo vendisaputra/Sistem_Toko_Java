@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color6"
-    tools:context=".AbsensiAct">
-
+    tools:context=".ListAbsensiAct">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -40,8 +38,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
+    <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
@@ -58,23 +56,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="6dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="132dp"
-        android:background="@drawable/icon_search"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/mregular"
+        android:text="Tanggal"
+        android:textColor="@color/color5"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/mregular"
+        android:text="Hadir"
+        android:textColor="@color/color5"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="18dp"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -85,29 +99,18 @@
             android:paddingBottom="100dp">
 
             <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/absensi_place">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/labsensi_place">
 
 
             </android.support.v7.widget.RecyclerView>
 
 
+
         </LinearLayout>
 
 
-
-
     </ScrollView>
-
-    <!--<Button-->
-        <!--android:id="@+id/btnplus2"-->
-        <!--android:layout_width="70dp"-->
-        <!--android:layout_height="70dp"-->
-        <!--android:layout_marginEnd="28dp"-->
-        <!--android:layout_marginBottom="32dp"-->
-        <!--android:background="@drawable/icon_plus"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent" />-->
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 public class GajiAct extends AppCompatActivity {
 
-    Button back, setting, print;
+    Button back, print;
     LinearLayout inputgaji;
 
     @Override
@@ -20,7 +20,6 @@ public class GajiAct extends AppCompatActivity {
 
         back = findViewById(R.id.back);
         inputgaji = findViewById(R.id.inputgaji);
-        setting = findViewById(R.id.setting);
         print= findViewById(R.id.print);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -38,16 +37,6 @@ public class GajiAct extends AppCompatActivity {
 
                 final Dialog dialog = new Dialog(GajiAct.this);
                 dialog.setContentView(R.layout.dialogview_input_gaji);
-                dialog.show();
-
-            }
-        });
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                final Dialog dialog = new Dialog(GajiAct.this);
-                dialog.setContentView(R.layout.dialogview_setting_gaji);
                 dialog.show();
 
             }

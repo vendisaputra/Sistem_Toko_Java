@@ -21,9 +21,16 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:text="Nama Karyawan"
-        android:layout_marginBottom="10dp"
         android:fontFamily="@font/mlight"
         android:textColor="@color/color5" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Tukang"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/mlight"
+        android:textColor="@color/color4" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -148,13 +155,33 @@
                 android:background="@drawable/bg_square"/>
 
             <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mlight"
+            android:textSize="16sp"
+            android:textColor="@color/color5"
+            android:layout_marginTop="20dp"
+            android:text="Uang Makan"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/mlight"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:text="Rp. 300.000"
+                android:textColor="@color/color4"
+                android:background="@drawable/bg_square"/>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/mlight"
                 android:textSize="16sp"
                 android:textColor="@color/color5"
                 android:layout_marginTop="20dp"
-                android:text="Uang Makan"/>
+                android:text="Pinjaman"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="30dp"

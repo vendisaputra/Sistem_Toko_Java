@@ -1,6 +1,8 @@
 package com.example.company.appstore;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,12 +11,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+
 public class DashbordAct extends AppCompatActivity {
 
-    TextView keuangan, absensi;
+    TextView keuangan, absensi,namakepala,namatoko,tglKeuangan, jmlkaryawan;
     Button logout;
     LinearLayout linearlayout, linearlayout2;
     ImageView absen_belum,absen_sudah,laporan_belum,laporan_sudah;
+
+    DatabaseReference reference;
+    String USERNAME_KEY = "usernamekey";
+    String username_key = "";
+    String username_key_new ="";
 
 
     @Override
@@ -22,6 +37,12 @@ public class DashbordAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashbord);
 
+        getUsernameLocal();
+
+        namakepala = findViewById(R.id.namakepala);
+        namatoko = findViewById(R.id.namatoko);
+        tglKeuangan = findViewById(R.id.tglKeuangan);
+        jmlkaryawan = findViewById(R.id.jmlkaryawan);
         keuangan = findViewById(R.id.keuangan);
         absensi = findViewById(R.id.absensi);
         linearlayout = findViewById(R.id.linearLayout);
@@ -32,14 +53,39 @@ public class DashbordAct extends AppCompatActivity {
         laporan_sudah = findViewById(R.id.laporan_sudah);
         logout = findViewById(R.id.logout);
 
+// notif
         absen_sudah.animate().alpha(0).setDuration(300).start();
         laporan_sudah.animate().alpha(0).setDuration(300).start();
 
         absen_belum.animate().alpha(1).setDuration(300).start();
         laporan_belum.animate().alpha(1).setDuration(300).start();
 
+//set tgl
+        long date = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+        String dateString = sdf.format(date);
+        tglKeuangan.setText(dateString);
+
+//database
+        reference= FirebaseDatabase.getInstance().getReference().
+                child("KepalaCabang").child(username_key_new);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                namakepala.setText(dataSnapshot.child("nama_lengkap").getValue().toString());
+                namatoko.setText(dataSnapshot.child("nama_cabang").getValue().toString());
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
+
+//Pindah activity
         keuangan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +126,13 @@ public class DashbordAct extends AppCompatActivity {
 
             }
         });
+
+    }
+
+//fungsi mengambil username local sesuai login
+    public void getUsernameLocal(){
+        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+        username_key_new =sharedPreferences.getString(username_key, "");
 
     }
 }
