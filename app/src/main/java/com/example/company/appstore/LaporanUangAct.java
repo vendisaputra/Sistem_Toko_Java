@@ -10,6 +10,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +41,7 @@ public class LaporanUangAct extends AppCompatActivity {
         setContentView(R.layout.activity_laporan_uang);
 
         btnplus = findViewById(R.id.btnplus);
-        btnsave = findViewById(R.id.btnsave);
+//        btnsave = findViewById(R.id.btnsave);
         back = findViewById(R.id.back);
 
         rvView = (RecyclerView) findViewById(R.id.laporan_uang_place);
@@ -50,9 +52,9 @@ public class LaporanUangAct extends AppCompatActivity {
         getUsernameLocal();
 
 //database
-        reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("Cabang").child(username_key_new).child("LaporanUang")
-                .addValueEventListener(new ValueEventListener() {
+        reference = FirebaseDatabase.getInstance().getReference().child("Cabang")
+                .child(username_key_new).child("LaporanUang");
+        reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         laporanUangConsts = new ArrayList<>();
@@ -85,12 +87,34 @@ public class LaporanUangAct extends AppCompatActivity {
                 dialog.setContentView(R.layout.dialogview_keuangan);
                 dialog.show();
 
-//                btnsave.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        dialog.dismiss();
-//                    }
-//                });
+                btnsave = dialog.findViewById(R.id.btnsave);
+                final TextView xtgl = dialog.findViewById(R.id.xtgl);
+                final EditText xnominal = dialog.findViewById(R.id.xnominal);
+
+
+
+                btnsave.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        reference.child(xtgl.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().child("tanggal").setValue(xtgl.getText().toString());
+                                dataSnapshot.getRef().child("nominal").setValue(xnominal.getText().toString());
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+
+                        });
+
+                        dialog.dismiss();
+                    }
+                });
 
             }
         });
