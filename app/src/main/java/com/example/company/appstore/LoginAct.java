@@ -98,8 +98,6 @@ public class LoginAct extends AppCompatActivity {
 
                         }
                     });
-                }else{
-                    Toast.makeText(LoginAct.this, "Masukan Username dan Password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
