@@ -136,7 +136,6 @@ public class LoginAct extends AppCompatActivity {
             }
         }, 2000);
     }
-
     public boolean validation(){
         boolean valid = true;
         xusername = findViewById(R.id.xusername);
@@ -158,4 +157,5 @@ public class LoginAct extends AppCompatActivity {
 
         return valid;
     }
+
 }
