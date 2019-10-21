@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.company.appstore.sqllite.SqlLiteHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +25,8 @@ public class LoginAct extends AppCompatActivity {
 
     DatabaseReference reference;
 
+    SqlLiteHelper sqlLiteHelper;
+
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
 
@@ -31,6 +34,8 @@ public class LoginAct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sqlLiteHelper = new SqlLiteHelper(this);
 
         btn_login = findViewById(R.id.btn_login);
         btn_owner = findViewById(R.id.btn_owner);
@@ -114,8 +119,6 @@ public class LoginAct extends AppCompatActivity {
 
             }
         });
-
-
     }
 
 // Exit
