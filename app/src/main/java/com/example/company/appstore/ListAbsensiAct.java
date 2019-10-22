@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,18 +23,21 @@ public class ListAbsensiAct extends AppCompatActivity {
     DatabaseReference reference;
     private RecyclerView rvView;
     private RecyclerView.Adapter adapter;
+    CheckBox cb;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<ListAbsensiConst> labsensiConsts;
 
+    private ArrayList<ListAbsensiConst> labsensiConsts;
+    private static ListAbsensiAct instance;
     String USERNAME_KEY = "usernamekey";
     String username_key ="";
     String username_key_new ="";
+    String nKaryawan = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_absensi);
-
+        instance = this;
 
         rvView = (RecyclerView) findViewById(R.id.labsensi_place);
         rvView.setHasFixedSize(true);
@@ -42,8 +48,8 @@ public class ListAbsensiAct extends AppCompatActivity {
 
 //mengambil data dari intent
         Bundle bundle = getIntent().getExtras();
-        final String nama_karyawan= bundle.getString("key");
-
+        String nama_karyawan= bundle.getString("key");
+        nKaryawan = nama_karyawan;
 
 //database
         reference = FirebaseDatabase.getInstance().getReference();
@@ -70,12 +76,25 @@ public class ListAbsensiAct extends AppCompatActivity {
 
                     }
                 });
+
+
+
+    }
+
+    public static ListAbsensiAct getInstance() {
+        return instance;
+    }
+
+    //update
+    public void updateAbsen(String key, String keterangan){
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Cabang").child(username_key_new).child("Karyawan").child(nKaryawan).child("Absensi").child(key);
+        ListAbsensiConst listAbsensiConst = new ListAbsensiConst(keterangan, key, key);
+        db.setValue(listAbsensiConst);
     }
 
 //mengambil data local
     public void getUsernameLocal(){
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
         username_key_new =sharedPreferences.getString(username_key, "");
-
     }
 }

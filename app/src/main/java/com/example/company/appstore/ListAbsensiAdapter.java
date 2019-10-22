@@ -1,5 +1,6 @@
 package com.example.company.appstore;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -7,12 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ListAbsensiAdapter extends RecyclerView.Adapter<ListAbsensiAdapter.MyViewHolder> {
-
     Context context;
     ArrayList<ListAbsensiConst> labsensiConsts;
     public ListAbsensiAdapter(ArrayList<ListAbsensiConst> p, Context c){
@@ -29,10 +32,25 @@ public class ListAbsensiAdapter extends RecyclerView.Adapter<ListAbsensiAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListAbsensiAdapter.MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull ListAbsensiAdapter.MyViewHolder myViewHolder, final int i) {
 
         myViewHolder.xtgl.setText(labsensiConsts.get(i).getTanggal());
-        myViewHolder.xboxhadir.setText(labsensiConsts.get(i).getKeterangan());
+        if (labsensiConsts.get(i).getKeterangan().equals("Hadir")){
+            myViewHolder.xboxhadir.setChecked(true);
+        }else{
+            myViewHolder.xboxhadir.setChecked(false);
+        }
+
+        myViewHolder.xboxhadir.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    ListAbsensiAct.getInstance().updateAbsen(labsensiConsts.get(i).getKey(), "Alpha");
+                }else{
+                    ListAbsensiAct.getInstance().updateAbsen(labsensiConsts.get(i).getKey(), "Hadir");
+                }
+            }
+        });
 
     }
 
@@ -43,7 +61,8 @@ public class ListAbsensiAdapter extends RecyclerView.Adapter<ListAbsensiAdapter.
 
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView xtgl,  xboxhadir;
+        TextView xtgl;
+        CheckBox xboxhadir;
 
 
         public MyViewHolder(@NonNull View itemView){

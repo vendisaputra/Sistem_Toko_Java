@@ -15,6 +15,7 @@ public class ListAbsensiConst implements Serializable {
         this.key = key;
     }
 
+
     public String getKeterangan() {
         return keterangan;
     }
