@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class LaporanUangAdapter extends RecyclerView.Adapter<LaporanUangAdapter.MyViewHolder> {
 
@@ -29,9 +31,13 @@ public class LaporanUangAdapter extends RecyclerView.Adapter<LaporanUangAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull LaporanUangAdapter.MyViewHolder myViewHolder, int i) {
+        //currency
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
         myViewHolder.xtgl.setText(laporanUangConsts.get(i).getTanggal());
-        myViewHolder.xnominal.setText(laporanUangConsts.get(i).getNominal());
+
+        myViewHolder.xnominal.setText(formatRupiah.format(Double.parseDouble(laporanUangConsts.get(i).getNominal())));
 
     }
 

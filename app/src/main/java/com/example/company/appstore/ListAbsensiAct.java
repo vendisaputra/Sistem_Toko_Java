@@ -90,6 +90,7 @@ public class ListAbsensiAct extends AppCompatActivity {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Cabang").child(username_key_new).child("Karyawan").child(nKaryawan).child("Absensi").child(key);
         ListAbsensiConst listAbsensiConst = new ListAbsensiConst(keterangan, key, key);
         db.setValue(listAbsensiConst);
+        Toast.makeText(instance, "Ok", Toast.LENGTH_SHORT).show();
     }
 
 //mengambil data local

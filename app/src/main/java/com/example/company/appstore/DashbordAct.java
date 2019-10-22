@@ -54,15 +54,12 @@ public class DashbordAct extends AppCompatActivity {
         logout = findViewById(R.id.logout);
 
 // notif
-        absen_sudah.animate().alpha(0).setDuration(300).start();
-        laporan_sudah.animate().alpha(0).setDuration(300).start();
 
-        absen_belum.animate().alpha(1).setDuration(300).start();
-        laporan_belum.animate().alpha(1).setDuration(300).start();
+
 
 //set tgl
         long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
         String dateString = sdf.format(date);
         tglKeuangan.setText(dateString);
 
@@ -74,7 +71,6 @@ public class DashbordAct extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 namakepala.setText(dataSnapshot.child("nama_lengkap").getValue().toString());
                 namatoko.setText(dataSnapshot.child("nama_cabang").getValue().toString());
-
             }
 
             @Override
@@ -82,6 +78,46 @@ public class DashbordAct extends AppCompatActivity {
 
             }
         });
+
+        //count jumlah karyawan
+        reference = FirebaseDatabase.getInstance().getReference().
+                child("Cabang").child(username_key_new).child("Karyawan");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Integer jml = (int) dataSnapshot.getChildrenCount();
+                jmlkaryawan.setText("Jumlah Karyawan "+jml );
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        reference = FirebaseDatabase.getInstance().getReference().
+                child("Cabang").child(username_key_new).child("LaporanUang").child(dateString);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+//                    absen_sudah.animate().alpha(1).setDuration(300).start();
+//                    absen_belum.animate().alpha(0).setDuration(300).start();
+                    laporan_sudah.animate().alpha(1).setDuration(300).start();
+                    laporan_belum.animate().alpha(0).setDuration(300).start();
+                }else{
+                    laporan_sudah.animate().alpha(0).setDuration(300).start();
+                    laporan_belum.animate().alpha(1).setDuration(300).start();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
 
 
 

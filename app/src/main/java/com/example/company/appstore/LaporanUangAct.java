@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class LaporanUangAct extends AppCompatActivity {
@@ -91,6 +92,13 @@ public class LaporanUangAct extends AppCompatActivity {
                 final TextView xtgl = dialog.findViewById(R.id.xtgl);
                 final EditText xnominal = dialog.findViewById(R.id.xnominal);
 
+                long date = System.currentTimeMillis();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
+                String dateString = sdf.format(date);
+
+                xtgl.setText(dateString);
+                xnominal.setText(null);
+
 
 
                 btnsave.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +109,11 @@ public class LaporanUangAct extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 dataSnapshot.getRef().child("tanggal").setValue(xtgl.getText().toString());
-                                dataSnapshot.getRef().child("nominal").setValue(xnominal.getText().toString());
+                                if (xnominal.getText().toString().isEmpty()) {
+                                    dataSnapshot.getRef().child("nominal").setValue("0");
+                                }else{
+                                    dataSnapshot.getRef().child("nominal").setValue(xnominal.getText().toString());
+                                }
 
                             }
 
