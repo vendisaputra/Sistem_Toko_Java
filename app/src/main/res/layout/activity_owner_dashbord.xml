@@ -140,6 +140,7 @@
                                 android:fontFamily="@font/mregular"/>
 
                             <TextView
+                                android:id="@+id/ket_jmlc1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/mlight"
@@ -296,6 +297,7 @@
                                 android:fontFamily="@font/mregular"/>
 
                             <TextView
+                                android:id="@+id/ket_jmlc2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/mlight"
@@ -449,6 +451,7 @@
                                 android:fontFamily="@font/mregular"/>
 
                             <TextView
+                                android:id="@+id/ket_jmlc3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/mlight"
