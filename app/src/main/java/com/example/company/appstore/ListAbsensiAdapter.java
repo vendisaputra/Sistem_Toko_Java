@@ -41,13 +41,17 @@ public class ListAbsensiAdapter extends RecyclerView.Adapter<ListAbsensiAdapter.
             myViewHolder.xboxhadir.setChecked(false);
         }
 
+
+
         myViewHolder.xboxhadir.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
+                if (!isChecked){
                     ListAbsensiAct.getInstance().updateAbsen(labsensiConsts.get(i).getKey(), "Alpha");
+
                 }else{
                     ListAbsensiAct.getInstance().updateAbsen(labsensiConsts.get(i).getKey(), "Hadir");
+
                 }
             }
         });
