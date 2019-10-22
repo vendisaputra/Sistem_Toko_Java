@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.company.appstore.sqllite.SqlLiteHelper;
@@ -20,7 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginAct extends AppCompatActivity {
 
     EditText xusername, xpass;
-    Button btn_login, btn_owner;
+    Button btn_login;
+    ImageView btn_owner;
     boolean doubleBackToExitPressedOnce = false;
 
     DatabaseReference reference;
@@ -56,54 +58,54 @@ public class LoginAct extends AppCompatActivity {
 
                     //database
                     String username = xusername.getText().toString();
-                    final String password = xpass.getText().toString();
+                final String password = xpass.getText().toString();
 
-                    reference = FirebaseDatabase.getInstance().getReference().
-                            child("KepalaCabang").child(username);
+                reference = FirebaseDatabase.getInstance().getReference().
+                        child("KepalaCabang").child(username);
 
-                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
+                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
 
-                                // ambil data password dari firbase
-                                String passwordFromFirebase = dataSnapshot.child("password").getValue().toString();
+                            // ambil data password dari firbase
+                            String passwordFromFirebase = dataSnapshot.child("password").getValue().toString();
 
-                                //Validasi password dengan firebase
-                                if (password.equals(passwordFromFirebase)) {
-
-
-                                    //Simpan username key pada local
-                                    SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString(username_key, xusername.getText().toString());
-                                    editor.apply();
-
-                                    //pindah activity
-                                    Intent gotoprofil = new Intent(LoginAct.this, DashbordAct.class);
-                                    startActivity(gotoprofil);
+                            //Validasi password dengan firebase
+                            if (password.equals(passwordFromFirebase)) {
 
 
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Password salah!", Toast.LENGTH_SHORT).show();
-                                    btn_login.setEnabled(true);
-                                    btn_login.setText("Login");
-                                }
+                                //Simpan username key pada local
+                                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString(username_key, xusername.getText().toString());
+                                editor.apply();
+
+                                //pindah activity
+                                Intent gotoprofil = new Intent(LoginAct.this, DashbordAct.class);
+                                startActivity(gotoprofil);
+
 
                             } else {
-                                Toast.makeText(getApplicationContext(), "Username tidak ada!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Password salah!", Toast.LENGTH_SHORT).show();
                                 btn_login.setEnabled(true);
                                 btn_login.setText("Login");
                             }
 
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Username tidak ada!", Toast.LENGTH_SHORT).show();
+                            btn_login.setEnabled(true);
+                            btn_login.setText("Login");
                         }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
+                    }
 
-                        }
-                    });
-                }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
             }
         });
 

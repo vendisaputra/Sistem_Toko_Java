@@ -38,27 +38,31 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 
-    <Button
+    <ImageView
         android:id="@+id/btn_kcabang"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/swipekirix"
+        android:src="@drawable/ic_arrow"
+        android:background="#c0c0c0"
         app:layout_constraintEnd_toStartOf="@+id/btn_owner"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/btn_owner"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/swipekanan"
+        android:src="@drawable/ic_arrow"
+        android:scaleY="-1"
+        android:scaleX="-1"
+        android:background="@drawable/nav_login_style"
         app:layout_constraintEnd_toStartOf="@+id/txt_kcabang"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +80,7 @@
         android:hint="Username"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:theme="@style/EditTextTheme"
         android:textColor="@color/color5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -103,17 +108,15 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="325dp"
-        android:layout_height="60dp"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/btn_login"
+        android:background="@drawable/btn_login_style"
         android:fontFamily="@font/mregular"
-        android:paddingBottom="10dp"
         android:text="Login"
         android:textColor="#fff"
-
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
